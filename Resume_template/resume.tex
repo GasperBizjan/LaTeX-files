@@ -1,0 +1,304 @@
+\documentclass[%singlesided,
+               doublesided,
+               paper=a4,
+               fontsize=10pt
+              ]{my-resume}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[skins]{tcolorbox}
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{caption}
+%\usepackage[ddmmyyyy]{datetime2}
+\usepackage[nodayofweek]{datetime}
+\newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\highlightwidth{8cm}
+\setlength\headerheight{3cm}            % note that margintop gets added to this value, i.e. the header bar is 5cm
+\setlength\marginleft{1cm}
+\setlength\marginright{\marginleft}      % needs to be 1.5 times to be actually equal. why?
+\setlength\margintop{1cm}
+\setlength\marginbottom{1cm}
+
+\captionsetup[figure]{labelformat=empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{fontspec}
+\setmainfont{Carlito}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\colorlet{highlightbarcolor}{lightgray}
+\colorlet{headerbarcolor}{darkgray}
+\colorlet{headerfontcolor}{white}
+\colorlet{accent}{teal}
+\colorlet{heading}{black}
+\colorlet{emphasis}{black}
+\colorlet{body}{black}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+    
+    \name{Name Namington}
+    \tagline{
+        Job title @ Place of work \\ Some quick details about the field of your work \\
+        \\
+        }
+        
+    % \photo[round]{picture.png}{\dimexpr \headerheight-\marginbottom}   
+    % make photo exactly match the header with margintop/marginright/marginbottom as margin
+    \begin{wrapfigure}{r}{0.22\textwidth} 
+        \begin{tikzpicture}
+          \node[circle, draw, very thick, color=accent, minimum size=3.8cm, fill overzoom image=picture.jpg]{};
+        \end{tikzpicture}
+    \end{wrapfigure}  
+    
+    \makeheader
+    
+    \highlightbar{
+
+        \section{Personal}
+        \vspace{0.5em}
+            \textcolor{accent}{ \faFlag} American  ·
+            \textcolor{accent}{ \faBirthdayCake} 1st Jan 2023  · 
+            \textcolor{accent}{ \faMars} Male \\
+            \location{Street 14, 1124 Town}
+            
+        \section{Contact}
+        \vspace{0.5em}
+            \phone{+386 (0)41 902 323 \textit{(Mobile)}}
+            \email{name.namington@gmail.com}
+            \vspace{0.5em}
+            %\homepage{nicokrieger.com}{https://www.nicokrieger.de}
+            \github{@NameNamington}{https://github.com/NameNamington}
+            \linkedin{www.linkedin.com/in/namenamington}{https://www.linkedin.com/in/namenamington/}
+            %\orcid{0000-0003-1104-2014}{https://www.orcid.org/0000-0003-1104-2014}
+            %\ads{NASA/ADS publication list}{https://ui.adsabs.harvard.edu/search/fq=\%7B!type\%3Daqp\%20v\%3D\%24fq\_database\%7D&fq\_database=database\%3A\%20astronomy&p\_=0&q=pubdate\%3A\%5B2016-01\%20TO\%209999-12\%5D\%20author\%3A(\%22Krieger\%2C\%20Nico\%22)&sort=date\%20desc\%2C\%20bibcode\%20desc}
+            
+        \section{Hard Skills}
+            \skillsection{Programming}
+                \skill{Python}{4}
+                \skill{C++}{3}
+                \skill{R}{2}
+                \skill{Wolfram Mathematica}{4}
+                \skill{LaTeX}{4}
+            
+            \vspace{0.5em}
+            \skillsection{Operating Systems}
+                \skill{Linux}{3}
+                \skill{Windows}{5}
+            
+            \vspace{0.5em}
+
+            \skillsection{Engineering Software}
+                \skill{SolidWorks 3D CAD}{5}
+                \skill{FEM/CFD Software}{4}
+                (ANSYS, ABAQUS) \\
+                \skill{LabVIEW}{3}
+
+            \vspace{0.5em}
+            
+            \skillsection{Other software \& Tools}
+                \skill{Visualisation}{5}
+                (matplotlib, gnuplot, ...)\\
+                \skill{Data handling/analysis}{4}
+                (numpy, scipy, pandas, ...)\\
+                \skill{Microsoft Office}{4}
+                (Word, PowerPoint, Excel) \\
+                \skill{Adobe}{3}
+                
+            \skillsection{Other Engineering skills}
+            \tag{3D printing} \tag{Modeling and simulation} \tag{Rapid prototyping} \tag{Struct. Dynamics}  \tag{Tech. documentation} \tag{Statistics} \tag{Experiments} \tag{Design engineering} \tag{HPC} \tag{Machining} \tag{ROS}  \tag{CFD}     \tag{Measurements}  \tag{Injection moulding} 
+            
+            %3D printing · Modeling and simulation · Rapid prototyping · Structural Dynamics · Engineering documentation · CFD
+        
+        \section{Languages}
+            \skill{English}{5}
+            \skill{German}{2}
+    
+    }
+    \mainbar{
+        \section[\faStreetView]{About Me}
+        
+            Jubilantly swivel frolicking equally chunky crunching as whenever as researching form Engineering. \\
+            Amidst my laborer as an assistantward inly an assembly regarding dynamics, I deliver formulate merely a resilient groundwork yet too a vaster comprehension form gizmos.
+            If thou art examining toward a zealous and committed undergrad, including a zeal as 3D style, imitation and paradigm, I am the rectify human in favor of the apprenticeship!
+        
+        \section[\faGears]{Work experience}
+        
+            \job{Oct 2022 - Present · 8 mos}
+                {\textbf{Workplace 1} \\ 
+                 · Location, Country}
+                {Job Title 1}
+                {
+                    Text 
+                    
+                }
+            \job{Jun 2016 - Feb 2023 · 6 yrs 9 mos}
+                {\textbf{Workplace 2} \\ 
+                 · Location, Country}
+                {Job Title 4}
+                {
+                        Text
+                }
+            \job{Jul 2019 - Aug 2019 · 2 mos}
+                {\textbf{Workplace 3} \\ 
+                 · Location, Country}
+                {Job Title 3}
+                {
+                    Text
+                }
+        
+        \section[\faMortarBoard]{Education}
+        \job{Oct 2020 - Aug 2023 · 3 semesters}
+            {\textbf{University of Something} · Country}
+            {Master of Mechanical Engineering}
+            {
+                Grade: 9.0 / 10.0 \\
+                Text \\
+                Courses focused on Mechanics, Dynamics, FEM, programming, Measurements, Mechatronics.
+            }
+        \job{Oct 2021 - Mar 2022 · 1 semester}
+            {\textbf{Technische Universität Something} · Country}
+            {}
+            {
+                Grade: 2.0 / 5.0 (German System) \\
+                Erasmus+ exchange semester\\ 
+                Courses: FEM, CFD, Statistics, Data Visualisation, System Dynamics and the German language.
+            }
+
+        \job{Oct 2018 - Aug 2020 · 6 semesters}
+            {\textbf{University of Something} · Country}
+            {Bachelor of Mechanical Engineering}
+            {
+                Grade: 8.7 / 10.0\\
+                
+            }
+     
+    }
+    \makebody
+    \clearpage
+    
+    
+    \pagestyle{highlightmain}
+    
+    % The highlightbar needs to be filled to display mainbar contents correctly in singlesised mode
+    % For an empty highlightbar, fill with empty space
+    \highlightbar{
+
+        \section{Soft Skills}
+            \tag{Teaching} \tag{Adaptability} \tag{Teamwork}  \tag{Public speaking} \tag{Time management} \tag{Problem solving} \tag{Detail-oriented} \tag{Collaborate} \tag{Creativity} \tag{Organised}
+
+            \bigskip
+
+        \section{Certifications}
+            \begin{itemize}
+              \item Item
+              \item Item
+              \item Item
+              \item Item
+            \end{itemize}
+
+        \bigskip
+        \section{Summer courses taken}
+            \begin{itemize}
+              \item Item
+              \item Item
+              \item Item
+            \end{itemize}
+
+        \section{Recommendations}
+            \begin{itemize}
+              \item write here!
+            \end{itemize}
+
+        
+        \vspace{7.5 cm}
+        \subsection{Find more on my \href{https://www.linkedin.com/in/namenamington/}{LinkedIn}}
+            \textcolor{highlightbarcolor}{.}
+            \begin{wrapfigure}{l}{0.22\textwidth} 
+                \begin{tikzpicture}
+                  \node[draw, very thick, color=accent, minimum size=6cm, fill overzoom image=qrcode.png]{};
+                \end{tikzpicture}
+            \end{wrapfigure} 
+
+    }
+    \mainbar{
+
+        \section[\faTrophy]{Achievements, honours and awards}
+        
+            \achievement{\textbf{Name of achievement}\\
+            More information}
+            
+
+        \section[\faBook]{Publications}
+            \publication
+        	{Name of publication} % Title
+        	{\textbf{N. Namington} } % Authors
+        	{2021} % Year
+        	{Journal Name : Journal} % Journal
+                {\href{https://nonexistant-link-to-journal}{journal-webpage.net}}
+        	%{\ADS{https://ui.adsabs.harvard.edu/abs/2020ApJ...897..176K}, \arXiv{https://arxiv.org/abs/2006.08262}} % ADS & arxiv links
+        	%{\ADS{https://ui.adsabs.harvard.edu/abs/2020ApJ...897..176K}, \arXiv{https://arxiv.org/abs/2006.08262}} % ADS & arxiv links
+        
+        \section[\faSunO]{My daily routine}
+        % This is taken from AltaCV
+        % see https://github.com/liantze/AltaCV for details
+
+        \wheelchart{1.5cm}{0.6cm}{% outer and inner diameter
+            1/8em/accent!75/3D printing and painting miniatures,
+            6/8em/accent!20/Sleep,          % comma-separated list of
+            1/8em/accent!100/leisure (chess or movies),
+            8/8em/accent!40/Engineering studies \& work, % fraction of 24 / line length / color / label
+            1/8em/accent!80/Physical training,          % here, the color is shades of the accent color
+            2/8em/accent!60/Walking \& taking care of my dog,
+            1/8em/accent!95/Socialising,
+            3/8em/accent!70/Cooking \& housework
+        }
+        
+
+
+        \subsection{Statement }
+        \textit{I hereby confirm that all the information provided in my CV is true and accurate to the best of my knowledge.}\\
+
+        %\begin{flushleft}
+        %    \text{Ljubljana, \today}
+        %\end{flushleft}
+
+        Ljubljana, \today
+        
+        \textcolor{white}{.}
+        \begin{wrapfigure}{r}{0.22\textwidth} 
+            \centering
+            \includegraphics[width=\linewidth]{signature.png}
+            \caption{Name Naming}
+        \end{wrapfigure}  
+    
+    }
+    \makebody
+
+\end{document}
