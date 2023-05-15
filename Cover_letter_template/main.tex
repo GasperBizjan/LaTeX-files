@@ -1,0 +1,95 @@
+% Project:  TeX Cover Letter Template
+% Author:   Sid Lacy
+
+% EDIT info.tex, body.tex
+
+\documentclass[12pt]{letter}
+
+% font
+\usepackage[sfdefault,lf]{carlito}
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{\carlitoOsF #1}
+
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{eso-pic}
+\usepackage{charter}
+
+% date
+\usepackage[nodayofweek]{datetime}
+\newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
+
+% colors
+\colorlet{accent}{teal}
+\colorlet{headText}{white}
+
+
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\input{info}
+
+% begin document
+\begin{document}
+
+    % line upper
+    \AddToShipoutPictureBG{%
+    \color{teal}
+    \AtPageUpperLeft{\rule[-1.33in]{\paperwidth}{1.3in}}
+    }
+    % Shaded header banner
+    \AddToShipoutPictureBG{%
+    \color{darkgray}
+    \AtPageUpperLeft{\rule[-1.3in]{\paperwidth}{1.3in}}
+    }
+    % line lower
+    \AddToShipoutPictureBG{%
+    \color{teal}
+    \AtPageUpperLeft{\rule[-0.03in]{\paperwidth}{1.3in}}
+    }
+    
+    % Header
+    \begin{center}
+    {\fontsize{28}{0}\selectfont\scshape \textcolor{headText}{\myname}}
+
+    \href{mailto:\myemail}{\textcolor{accent}{\faEnvelope}\enspace \textcolor{headText}{\myemail}}\hfill
+    \href{https://linkedin.com/in/\mylinkedin}{\textcolor{accent}{\faLinkedinIn}\enspace \textcolor{headText}{linkedin.com/in/\mylinkedin}}\hfill
+    \href{tel:\myphone}{\textcolor{accent}{\faPhone}\enspace \textcolor{headText}{\myphone}}\hfill
+    \textcolor{accent}{\faMapMarker} \enspace \textcolor{headText}{\mylocation}
+    \end{center}
+    
+    \vspace{0.2in}
+    
+    % Opening block
+    \today\\
+    
+    \vspace{-0.1in}\recipient\\
+    \company\\
+    \street\\
+    \city, \state\ \zip\\
+
+    \subject \\
+    
+    \vspace{-0.1in}\greeting\ \recipient,\\
+    
+    % Body
+    \vspace{-0.1in}\setlength\parindent{24pt}
+    \noindent\input{body}
+    
+    % Closer
+    \vspace{0.1in}
+    \vfill
+    
+    \begin{flushright}
+    \closer,
+    
+    \vspace{-0.1in}\includegraphics[width=1.5in]{sig.png}\vspace{-0.1in}
+    
+    \myname\\
+    \mytitle
+    \end{flushright}
+
+\end{document}
